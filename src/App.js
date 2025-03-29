@@ -16,12 +16,12 @@ export const Login = () => {
         <div>
             <form>
                 <label>
-                    <span>Email</span>
+                    <span>Email:</span>
                     <input/>
                 </label>
                 
                 <label>
-                    <span>Senha</span>
+                    <span>Senha:</span>
                     <input type="password" />
                 </label>
             </form>
