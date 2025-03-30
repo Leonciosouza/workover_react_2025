@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const App = () => {
   return (
@@ -13,6 +13,27 @@ export const App = () => {
 export const Login = () => {
   const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
+
+    useEffect(() => {
+      if (window.confirm("Você é homem?")) {
+        console.log("Homem");
+        
+      } else {
+        console.log("Mulher");
+      }
+    }, []);
+
+    useEffect(() => {
+      console.log(email);
+      console.log(password);
+
+    }, [email]);
+
+    useEffect(() => {
+      console.log(email);
+      console.log(password);
+
+    }, [password]);
 
     const handleEntrar = () => {
       console.log(email);
