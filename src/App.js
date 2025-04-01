@@ -11,14 +11,14 @@ export const App = () => {
 }
 
 export const Login = () => {
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
-    const emailLength = useMemo(() => {
+  const emailLength = useMemo(() => {
 
-      console.log("Executou");
-      return email.length * 1000;      
-    }, [email.length]);
+    console.log("Executou");
+    return email.length * 1000;
+  }, [email.length]);
 
   /*
     useEffect(() => {
@@ -43,32 +43,32 @@ export const Login = () => {
     }, [password]);
   */
 
-    const handleEntrar = useCallback(() => {
-      console.log(email);
-      console.log(password);
-    }, []);
+  const handleEntrar = useCallback(() => {
+    console.log(email);
+    console.log(password);
+  }, [email, password]);
 
-    return (
-        <div>
-            <form>
-              <p>Quantidade de caracteres: {emailLength}</p>
-                <label>
-                    <span>Email:</span>
-                    <input value={email} onChange={e => setEmail(e.target.value)}/>
-                </label>
-                
-                <label>
-                    <span>Senha:</span>
-                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-                </label>
+  return (
+    <div>
+      <form>
+        <p>Quantidade de caracteres: {emailLength}</p>
+        <label>
+          <span>Email:</span>
+          <input value={email} onChange={e => setEmail(e.target.value)} />
+        </label>
 
-                <button type="button" onClick={handleEntrar}>
-                  Entrar
-                </button>
-            </form>
-        </div>
-        
-    );
+        <label>
+          <span>Senha:</span>
+          <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+        </label>
+
+        <button type="button" onClick={handleEntrar}>
+          Entrar
+        </button>
+      </form>
+    </div>
+
+  );
 }
 
 export default App;
