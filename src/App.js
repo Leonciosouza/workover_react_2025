@@ -1,5 +1,5 @@
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 
 export const App = () => {
   return (
@@ -43,10 +43,10 @@ export const Login = () => {
     }, [password]);
   */
 
-    const handleEntrar = () => {
+    const handleEntrar = useCallback(() => {
       console.log(email);
       console.log(password);
-    }
+    }, []);
 
     return (
         <div>
